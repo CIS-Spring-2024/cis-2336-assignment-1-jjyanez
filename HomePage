@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>My Favorite Vacations</h1>
+            <nav>
+                <ul>
+                    <li><a href="#beach">Beach</a></li>
+                    <li><a href="#mountains">Mountains</a></li>
+                </ul>
+            </nav>  
+    </header>
+<div class="topnav"> 
+    <a href="HomePage.html" class="active">Home</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contat</a>
+    <a href="about.html">About</a>
+
+</div>
+    <section id="beach">
+        <h2>Beach Vacations</h2>
+        <p>I love beach vacations! The sun, the sand, and the waves make me feel relaxed.</p>
+        <!-- <figure>
+            <img src="images/beach.jpg" alt="Beach" >
+            <figcaption>Relaxing at the beach</figcaption>
+        </figure> -->
+        <div id="beach-images"> 
+            <!--images will be displayed here-->
+        </div>
+        <details>
+            <summary>More about beach vacations</summary>
+            <p>Beaches are perfect for swimming, sunbathing, and beach sports!</p>
+        </details>
+    </section>
+    
+    <section id="mountains">
+        <h2>Mountain Getaways</h2>
+        <p>There's something special about the mountains. The air is fresh and the views are stunning.</p>
+        <!-- <figure>
+            <img src="images/mountains.jpg" alt="Mountains">
+            <figcaption>Hiking in the mountains</figcaption>
+        </figure> -->
+        <div id="mountains-images"> <!--images will be displayed here--></div>
+        <details>
+            <summary>More about mountain vacations</summary>
+            <p>Mountains offer great opportunities for hiking, camping, and wildlife viewing.</p>
+        </details>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Favorite Vacations. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:info@myfavoritevacations.com">info@myfavoritevacations.com</a>.</p>
+    </footer>
+
+    <hr>
+
+    <aside>
+        <h3>Did you know?</h3>
+        <p>Traveling can help reduce stress and improve your mental health.</p>
+    </aside>
+
+    <!--code demo for week 9-->
+    <script src="script.js"> </script>
+
+   
+      
+</body>
+</html>

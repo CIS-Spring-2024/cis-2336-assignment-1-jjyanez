@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+        form{
+            display:flex;
+            flex-direction: column;
+            width:40%;
+        }
+
+        label{
+            margin-bottom: 5px;
+        }
+        
+        input, textarea,select{
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button{
+            font-size: 18px;
+            background-color: rgb(255, 208, 0);
+
+        }
+
+        button:hover{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Favorite Vacations</h1>
+            <nav>
+                <ul>
+                    <li><a href="#beach">Beach</a></li>
+                    <li><a href="#mountains">Mountains</a></li>
+                </ul>
+            </nav>  
+    </header>
+    <div class="topnav"> 
+        <a href="index.html" >Home</a>
+        <a href="news.html">News</a>
+        <a href="contact.html"class="active">Contact</a>
+        <a href="about.html">About</a>
+    
+    </div> 
+
+    <form method="post">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+
+        <label>Phone</label>
+        <input type="tel" id="phone" required>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <lable>Password:</lable>
+        <input type="password" id="password">
+
+        <lable>Date of Birth</lable>
+        <input type="date" id="dob"
+
+        <p>Preferred contact method:</p>
+        <div class="radio-group">
+            <input type="radio" id="contact_email"
+            value="Email">
+            <label>Email</label>
+
+            <input type="radio" id="contact_phone" value="Phone">
+            <label>Phone</label>
+
+        </div>
+        <!--<button type="submit" style="width: 200px; height: 50px; position: relative; top: 50%; left: 20%">Submit</button> -->
+        <button type="submit" data-message="Form is being submitted..." style="width: 200px; height: 50px; position: relative; top: 50%; left: 20%">Submit</button>
+
+
+    </form>
+
+<script>
+
+
+    // week 6 in-class demo code
+    
+    // 1. Using document.getElementsByTagName to interact with all input elements: change the background color of all input fields when they are focused and revert it back on blur.
+    let inputs = document.getElementsByTagName('input');
+    /*for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('focus', function() {
+            this.style.backgroundColor = 'yellow';
+        });
+        inputs[i].addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+    }*/
+    
+    // 2. for students in class practice: try to change the for loop into into a for of loop. answer below:
+    for (let input of inputs) {
+        input.addEventListener('focus', function() {
+            this.style.backgroundColor = 'yellow';
+        });
+        input.addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+    }
+    
+    // 3. Using document.getElementById to log a message everytime the "name" input value changes.
+    // Using document.getElementById to log a message everytime the "name" input value changes.
+    document.getElementById('name').addEventListener('blur', function() {
+            console.log('Name input changed to: ' + this.value);
+        });
+
+    // for students to add a password validation:  the password is more than 8 characters and alerts the user if it isn't
+    document.getElementById('password').addEventListener('blur', function() {
+        var password = this.value; // 'this' refers to the password input element
+        if(password.length < 8){
+            alert('Password must be more than 8 characters.');
+        } 
+    });
+
+    // Using document.getElementsByClassName to interact with elements of the "radio-group" class
+    let radioButtons = document.getElementsByClassName('radio-group');
+    for (let radioButton of radioButtons) {
+        radioButton.addEventListener('change', function(e) {
+            alert('A new contact method was selected: ' + e.target.value);
+        });
+    }
+
+    // Add an event listener to the "Submit" button to log a message when it is clicked
+    document.querySelector('button[type="submit"]').addEventListener('click', function(e) {
+        e.preventDefault();  // Prevent the form from submitting
+        // alert('submit the form for processig now?');
+        alert(e.target.dataset.message);
+        e.target.form.submit();
+    });
+
+
+    // week 7 in-class demo code 
+    //（Due to the muscle relief medicine I had for my neck/shoulder pain,
+    // I had difficuilties focusing on typing the code below during today's class. 
+    // That's why I directly displayed the pre-written code in the class）
+    // Please make sure that you follow the instructions and steps below to understand how I added more interaction into our form. 
+    
+    // 1. event delegation for form inputs. 
+    // in week 6, we used the getElementByTagName and a for loop to interact with all input elements: 
+    //change the background color of all input fields when they are focused, 
+    //and revert it back on blur.
+    // Today, let's first commend this part of code (please commend lines 93-110), and use the event delegation method instead for the same functionality.
+    // Below we use event delegation for form inputs. 
+    // It is noting that, since we want to make use of event delegation here, we will use events: 
+    // "focusin" and "focusout" instead of "focus" and "blur".
+    // (because "focus" and "blur" do not bubble, 
+    // but "focusin" and "focusout" do bubble.)
+
+    document.querySelector('form').addEventListener('focusin', function(event) {
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            event.target.style.backgroundColor = 'yellow';
+        }
+    });
+
+    document.querySelector('form').addEventListener('focusout', function(event) {
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+            event.target.style.backgroundColor = '';
+        }
+    });
+  
+    // 2. use the dataset property
+    //  First, we need to change line 82 into line 83 by adding: data-message="Form is being submitted..." 
+    //  This is a straightforward way to bind data directly to an element (data is prefixed with 'data-’).
+    //  second, we change line 137 into line 138. In line 138, our code can directlu retrive the data that binded to the element.
+
+    // 3. to validate the phone numberinout so that it follows the pattern: XXX-XXX-XXXX.
+    document.getElementById('phone').addEventListener('blur', function() {
+        var phone = this.value; // keyword 'this' refers to the password input element
+        let phoneRegex = /^\d{3}-\d{3}-\d{4}$/; // define regular expression pattern to match the phone format XXX-XXX-XXXX
+        if (!phoneRegex.test(this.value)) {
+            alert('phone number must be in the format XXX-XXX-XXXX');
+        }
+    });
+
+    // 4. student optional practice:
+    // form input validation: email. By using type="email", the browser will automatically check if the entered text is in the format of an email address 
+    // when the form is submitted.
+    // However, now the automatic email validation doesn't work, because of the usage of e.preventDefault().
+    // preventDefault method will stop the form from submitting and, consequently, stop the browser's validation.
+    // To solve this issue, you can write you own email validation code by using regular expression. 
+    
+    
+
+    
+</script>    
+</body>
+</html>

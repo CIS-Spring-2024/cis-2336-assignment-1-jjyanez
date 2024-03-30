@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+<style>
+    table{
+        width:70%;
+        border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid;
+    }
+    th{
+        height:50px;
+        background-color: bisque;
+        }
+    tr:nth-child(even){
+        background-color: aquamarine;
+    }    
+    tr:hover{
+        background-color: blueviolet;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>My Favorite Vacations</h1>
+            <nav>
+                <ul>
+                    <li><a href="#beach">Beach</a></li>
+                    <li><a href="#mountains">Mountains</a></li>
+                </ul>
+            </nav>  
+    </header>
+    <div class="topnav"> 
+        <a href="index.html" >Home</a>
+        <a href="news.html"class="active">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    
+    </div>
+<h2>Below please find info about my upcoming vacation plans!</h2>
+
+<table>
+    <tr>
+        <th>Destination</th>
+        <th>Lenght of Stay (days)</th>
+        <th>Budget</th>
+
+    </tr>
+    <tr>
+        <td>Seattle</td>
+        <td>5</td>
+        <td>$5000</td>
+        </tr>
+    
+    <tr>
+        <td>Denver</td>
+        <td>7</td>
+        <td>$2000</td>
+
+    </tr>
+
+    <tr>
+        <td>Key West</td>
+        <td>6</td>
+        <td>$6000</td>
+
+    </tr>
+
+    <tr>
+        <td>Hawaii</td>
+        <td>7</td>
+        <td>$10000</td>
+    </tr>
+</table>
+
+<!--demo code for week 4 -->
+<!--Inline JavaScript-->
+<h2>Suggestions?</h2>
+<form method="post">
+    <label>Suggestions:</label>
+    <input type="text" required>
+    <a href="#" onclick="alert('Hi, thanks for your suggestions!');">Submit</a>
+</form>
+
+<!--Embedded JavaScript-->
+<script>
+    // alert("Hi, thanks for your suggestion!");
+    document.write("Hi, thanks for your suggestions!");
+    //console.log('Hello!');
+</script>
+
+<!--external JavaScript-->
+<h2>Any questions?</h2>
+<form method="post">
+    <label>Please type your questions here:</label>
+    <input type="text" required>
+    <a href="#" onclick=returnMessage() >Submit</a>
+</form>
+
+<!--
+<script>
+    let myName = "Alice";
+    console.log(myName);
+
+    let isStudent = true;
+    console.log(isStudent);
+
+    let testScore;
+    console.log(testScore);
+
+    const pi = 3.14;
+    console.log(pi);
+
+    //pi = 5; // error!
+
+    // for loop example
+    for (let i = 1; i<=10; i++) {
+        console.log(i*i);
+    }
+
+
+    // change from for loop to do...while loop
+    let i = 1;
+
+    do {
+        console.log(i*i);
+        i++;
+    }while(i<=10);
+
+</script>
+-->
+
+<!--code demo for week 5--> 
+<script>
+    // part 1: arrays
+    let cities = ["New York", "Paris", "Tokyo"];
+    console.log(cities.length); // Output: 3
+
+    let lastCity = cities.pop();
+    console.log(lastCity); // Output: "Tokyo"
+    console.log(cities); // Output: ["New York", "Paris"]
+
+    let newLength = cities.push("Tokyo");
+    console.log(newLength); // Output: 3
+    console.log(cities); // Output: ["New York", "Paris", "Tokyo"]
+
+    let cityShift = cities.shift();
+    console.log(cities); // Output: ['Paris', 'Tokyo']
+
+    delete cities[1];
+    console.log(cities); // ['Paris', <1 empty slot>]
+
+    //part 2: objects
+    const vacation1 = {
+        destination: "Hawaii",
+        duration: 7,
+        "travel cost": 1500 // Notice the space in the property name
+    };
+    let vacationDuration = vacation1.duration;
+    let vacationDestination = vacation1["destination"];
+    console.log(vacationDestination);
+    console.log(vacationDuration);
+
+    let { destination, duration, "travel cost": travelCost } = vacation1; // Destructuring with renaming due to space in the property name
+    console.log(destination, duration, travelCost);
+
+    // Another object vacation2:
+    const vacation2 = '{"destination":"Alps", "duration":10, "travel cost":2000}'; // formatted as JSON; then is assigned as a string ti the variable.
+    let vacation2_Obj = JSON.parse(vacation2); // Convert JSON string to Object
+    console.log(vacation2_Obj["travel cost"]); // Accessing travel cost of vacation2
+
+    // part 3: nested function example for Vacation Expense Calculation
+       
+    function totalExpense(d) {
+        const stay = 100; // $100 per day for stay
+        const food = 50;  // $50 per day for food
+
+        function calcExp(rate) {
+            return d * rate;
+        }
+
+        return calcExp(stay) + calcExp(food);
+    }
+
+    const days = 10;
+    console.log(totalExpense(days)); // Outputs the total expense for 7 days
+
+
+
+</script>
+
+</body>
+</html>
