@@ -69,7 +69,7 @@ details {
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #007bff;
+    background: #590b0b;
     color: #fff;
 }
 
@@ -89,7 +89,7 @@ a:hover {
 }
 
 .topnav{
-    background-color: #333;
+    background-color: #590b0b;
     overflow: hidden;
 }
 .topnav a{
