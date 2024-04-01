@@ -16,12 +16,16 @@ body {
 }
 
 header {
-    background: maroon;
+    background: rgb(191, 0, 34);
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 20px 0;
+    display:flex;
+    text-align: left;
 }
-
+.imageh{
+    height:auto; 
+    width:100px;
+}
 header h1 {
     margin: 0;
 }
@@ -43,7 +47,6 @@ section {
 h2 {
     color: maroon;
 }
-
 img {
     max-width: 100%;
     height: auto;
@@ -72,6 +75,7 @@ footer {
     background: #590b0b;
     color: #fff;
 }
+footer.p{text-align: left;}
 
 hr {
     margin-top: 30px;
@@ -98,7 +102,7 @@ a:hover {
     text-align:center;
     text-decoration:none;
     padding:14px 16px;
-    font-size:20px;
+    font-size:18px;
 }
 .navbar a.active{
     background-color: rgb(213, 100, 2);
@@ -115,7 +119,7 @@ a:hover {
     padding: 14px 16px;
     background: maroon;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     font-family: inherit;
     margin:0;
 }
@@ -137,6 +141,7 @@ a:hover {
     padding: 20px 0px;
     display: block;
     text-align: left;
+    font-size: 18px;
   }
   
   .dropdown-content a:hover {
@@ -146,3 +151,5 @@ a:hover {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  
