@@ -41,7 +41,7 @@ section {
 }
 
 h2 {
-    color: #007bff;
+    color: maroon;
 }
 
 img {
@@ -88,22 +88,61 @@ a:hover {
     color: #333;
 }
 
-.topnav{
-    background-color: #590b0b;
+.navbar{
+    background-color:maroon;
     overflow: hidden;
 }
-.topnav a{
+.navbar a{
     float:left;
-    color:beige;
+    color:#fff;
     text-align:center;
+    text-decoration:none;
     padding:14px 16px;
-    font-size:19px;
+    font-size:20px;
 }
-.topnav a:hover{
-    background-color: antiquewhite;
-    color:black;
-}
-.topnav a.active{
-    background-color: chartreuse;
+.navbar a.active{
+    background-color: rgb(213, 100, 2);
     color:#fff;
 }
+.dropdown{
+    float:left;
+    overflow: hidden;
+}
+.dropdown .dropbtn{
+    text-align: center;
+    border:none;
+    outline:none; 
+    padding: 14px 16px;
+    background: maroon;
+    color: #fff;
+    font-size: 20px;
+    font-family: inherit;
+    margin:0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #eee;
+    color:black;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 20px 0px;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
